@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Splash Screen with Network Activity</string>
+    <string name="welcome">NumberMe</string>
+</resources>

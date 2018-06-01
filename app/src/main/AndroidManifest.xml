@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.androiddeft.splashscreenwithnetworkactivity">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <activity android:name=".MainActivity" />
+        <activity
+            android:name=".SplashActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".winningsTotal.winningsTotalActivity"
+            android:parentActivityName=".MainActivity">
+
+            <!-- The meta-data tag is required if you support API level 15 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
+
+        <activity
+            android:name=".winningsTotal.capitalInvestedActivity"
+            android:parentActivityName=".winningsTotal.winningsTotalActivity">
+
+            <!-- The meta-data tag is required if you support API level 15 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".winningsTotal.winningsTotalActivity" />
+        </activity>
+        <activity
+            android:name=".winningsTotal.profitGainedActivity"
+            android:parentActivityName=".winningsTotal.winningsTotalActivity">
+
+            <!-- The meta-data tag is required if you support API level 15 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".winningsTotal.winningsTotalActivity" />
+        </activity>
+        <activity
+            android:name=".winningsTotal.winningsHistoryActivity"
+            android:parentActivityName=".winningsTotal.winningsTotalActivity">
+
+            <!-- The meta-data tag is required if you support API level 15 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".winningsTotal.winningsTotalActivity" />
+        </activity>
+        <activity
+            android:name=".winningsTotal.displayTotalActivity"
+            android:parentActivityName=".winningsTotal.winningsTotalActivity">
+
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value=".winningsTotal.winningsTotalActivity" />
+        </activity>
+        <activity
+            android:name=".winningNumbers.winningNumbersActivity"
+            android:parentActivityName=".MainActivity">
+
+            <!-- The meta-data tag is required if you support API level 15 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
+        <activity
+            android:name=".numbersPlayed.numbersPlayedActivity"
+            android:parentActivityName=".MainActivity">
+
+            <!-- The meta-data tag is required if you support API level 15 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
+        <activity
+            android:name=".drawNumbers.drawNumbersActivity"
+            android:parentActivityName=".MainActivity">
+
+            <!-- The meta-data tag is required if you support API level 15 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
+        <activity
+            android:name=".editNumbers.editNumbersActivity"
+            android:parentActivityName=".MainActivity">
+
+            <!-- The meta-data tag is required if you support API level 15 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
+        <activity
+            android:name=".setting.settingsActivity"
+            android:parentActivityName=".MainActivity">
+
+            <!-- The meta-data tag is required if you support API level 15 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
+        <activity android:name=".winningNumbers.lastWinnerActivity" />
+        <activity android:name=".winningNumbers.topWinningNumbersActivity" />
+        <activity android:name=".numbersPlayed.numbersHistoryActivity" />
+        <activity android:name=".drawNumbers.singleDrawingActivity" />
+        <activity android:name=".drawNumbers.multipleDrawingActivity" />
+        <activity android:name=".drawNumbers.journalActivity" />
+        <activity android:name=".editNumbers.selectNumberActivity" />
+        <activity android:name=".editNumbers.journalAnalysisActivity" />
+        <activity android:name=".readFileActivity" />
+        <activity android:name=".datesActivity" />
+
+
+    </application>
+
+</manifest>
