@@ -10,6 +10,8 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.androiddeft.splashscreenwithnetworkactivity.LuckyNumbersRepo;
+import com.androiddeft.splashscreenwithnetworkactivity.PowerBallNumbersRepo;
 import com.androiddeft.splashscreenwithnetworkactivity.R;
 import com.androiddeft.splashscreenwithnetworkactivity.DatabaseHandler;
 
@@ -22,7 +24,7 @@ public class winningNumbersActivity extends AppCompatActivity {
 
     public TextView textView;
 
-    DatabaseHandler DatabaseHandler = new DatabaseHandler(this);
+    PowerBallNumbersRepo powerBallNumbersRepo = new PowerBallNumbersRepo();
 
 
 
@@ -42,7 +44,8 @@ public class winningNumbersActivity extends AppCompatActivity {
         try
         {
 
-            Cursor result = DatabaseHandler.getAllNumbers();
+            Cursor result = powerBallNumbersRepo.getAllPBNumbers();
+
             if(result.getCount() == 0) {
 
             }else {
@@ -52,30 +55,32 @@ public class winningNumbersActivity extends AppCompatActivity {
                             result.getString(2) + result.getString(3) + result.getString(4) +
                             result.getString(5) + result.getString(6) +result.getString(7));
 
-                    ListAdapter listAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, theList);
+                    }
+            }
 
-                    obj.setAdapter(listAdapter);
 
-                    obj.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        }
 
-                        @Override
-                        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
-                            Object listItem = obj.getItemAtPosition(position);
-
-                            textView.setText(listItem.toString());
-                        }
-
-                    });
+                catch (Exception e)
+                {
 
                 }
+
+        ListAdapter listAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, theList);
+
+        obj.setAdapter(listAdapter);
+
+        obj.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                Object listItem = obj.getItemAtPosition(position);
+
+                textView.setText(listItem.toString());
             }
-        }
 
-        catch (Exception e)
-        {
-
-        }
+        });
 
     }
 }

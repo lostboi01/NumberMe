@@ -6,8 +6,13 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.view.View;
+
 import java.util.ArrayList;
 import java.util.List;
+
+import com.androiddeft.splashscreenwithnetworkactivity.tickets;
+import com.androiddeft.splashscreenwithnetworkactivity.values;
 
 public class DatabaseHandler extends SQLiteOpenHelper {
 
@@ -17,19 +22,22 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     // Database Name
     private static final String DATABASE_NAME = "PowerBallNums";
 
+    private static final String TAG = DatabaseHandler.class.getSimpleName().toString();
     // Table Name
     private static final String TABLE_NAME = "PowerBallNums";
 
+
+
     // Table Columns names
-    private static final String ID = "id";
-    private static final String DATE = "date";
-    private static final String WB1 = "wb1";
-    private static final String WB2 = "wb2";
-    private static final String WB3 = "wb3";
-    private static final String WB4 = "wb4";
-    private static final String WB5 = "wb5";
-    private static final String PB = "pb";
-    private static final String MULTIPLIER = "multiplier";
+    public static final String ID = "id";
+    public static final String DATE = "date";
+    public static final String WB1 = "wb1";
+    public static final String WB2 = "wb2";
+    public static final String WB3 = "wb3";
+    public static final String WB4 = "wb4";
+    public static final String WB5 = "wb5";
+    public static final String PB = "pb";
+    public static final String MULTIPLIER = "multiplier";
 
 
     public DatabaseHandler(Context context) {
@@ -53,6 +61,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                 + MULTIPLIER + " text not null)";
 
         db.execSQL(CREATE_CONTACTS_TABLE);
+
     }
 
     @Override
@@ -64,6 +73,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         onCreate(db);
 
     }
+
 
     void add(values lang) {
 
@@ -92,6 +102,9 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
         db.close(); // Closing database connection
     }
+
+
+
 
 
     public Cursor getAllNumbers(){

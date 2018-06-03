@@ -36,8 +36,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="80dp"
                     android:layout_margin="5dp"
-                    android:text="Capital Invested"
                     android:background="@android:color/holo_blue_light"
+                    android:text="Capital Invested"
                     android:textColor="@android:color/background_light"
                     android:textSize="24sp"
                     android:textStyle="bold" />
@@ -47,8 +47,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="80dp"
                     android:layout_margin="5dp"
-                    android:text="Profit Gained"
                     android:background="@android:color/holo_blue_light"
+                    android:text="Profit Gained"
                     android:textColor="@android:color/background_light"
                     android:textSize="24sp"
                     android:textStyle="bold" />

@@ -18,6 +18,7 @@ import java.io.File;
 import java.util.ArrayList;
 
 import com.androiddeft.splashscreenwithnetworkactivity.DatabaseHandler;
+import com.androiddeft.splashscreenwithnetworkactivity.drawNumbers.drawNumbersActivity;
 
 import static android.os.Environment.DIRECTORY_DOWNLOADS;
 
@@ -36,6 +37,8 @@ public class SplashActivity extends Activity {
 
     final DatabaseHandler db = new DatabaseHandler(this);
 
+    final drawNumbersActivity drawNumbersActivity = new drawNumbersActivity();
+
 
 
     @Override
@@ -44,6 +47,8 @@ public class SplashActivity extends Activity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_splash);
+
+        drawNumbersActivity.insertData();
 
         //new FetchStats().execute();
 
@@ -96,13 +101,33 @@ public class SplashActivity extends Activity {
                 // Recurse through NumbersFile | parse to Database
                 final String[] values = new readFileActivity().readFile(dir).toArray(new String[0]);
 
+                int k = 0;
+
                 for (String s : values) {
+
+                    ++k;
 
                     String[] str = s.split(" \\|");
 
                     String num1 = str[1];
 
-                    db.add(new values(str[0], str[1], str[2], str[3], str[4], str[5], str[6], str[7]));
+                    PowerBallNumbersRepo powerBallNumbersRepo = new PowerBallNumbersRepo();
+
+                    PowerBallNumbers powerBallNumbers = new PowerBallNumbers();
+                    //powerBallNumbers.setsId("1");
+                    powerBallNumbers.setPowerBallId(String.valueOf(k));
+                    powerBallNumbers.setDate(str[0]);
+                    powerBallNumbers.setWb1(str[1]);
+                    powerBallNumbers.setWb2(str[2]);
+                    powerBallNumbers.setWb3(str[3]);
+                    powerBallNumbers.setWb4(str[4]);
+                    powerBallNumbers.setWb5(str[5]);
+
+                    powerBallNumbers.setPb(str[6]);
+                    powerBallNumbers.setMulti(str[7]);
+                    powerBallNumbersRepo.insert(powerBallNumbers);
+
+                    //db.add(new values(str[0], str[1], str[2], str[3], str[4], str[5], str[6], str[7]));
                 }
 
 

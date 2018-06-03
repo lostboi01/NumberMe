@@ -1,12 +1,24 @@
 package com.androiddeft.splashscreenwithnetworkactivity;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
+public class tickets {
 
-import java.util.ArrayList;
+    public static final String TAG = tickets.class.getSimpleName();
+    public static final String TABLE = "Tickets";
+    // Labels Table Columns names
+    public static final String KEY_TicketId = "TicketId";
+    public static final String KEY_Name = "Name";
 
-public class values {
+    public static final String ID = "id";
+    public static final String DATE = "date";
+    public static final String WB1 = "wb1";
+    public static final String WB2 = "wb2";
+    public static final String WB3 = "wb3";
+    public static final String WB4 = "wb4";
+    public static final String WB5 = "wb5";
+    public static final String PB = "pb";
+    public static final String MULTIPLIER = "multiplier";
+
+
 
     private int id;
     private String date;
@@ -18,38 +30,13 @@ public class values {
     private String pb;
     private String multi;
 
-    public values() {
 
-    }
+public tickets(){
 
-    public values(String date, String wb1, String wb2, String wb3, String wb4, String wb5, String pb, String multi) {
-        super();
-        this.date = date;
-        this.wb1 = wb1;
-        this.wb2 = wb2;
-        this.wb3 = wb3;
-        this.wb4 = wb4;
-        this.wb5 = wb5;
-        this.pb = pb;
-        this.multi = multi;
-        }
+}
 
-    public values(int id, String date, String wb1, String wb2, String wb3, String wb4, String wb5, String pb, String multi) {
-        super();
-        this.id = id;
-        this.date = date;
-        this.wb1 = wb1;
-        this.wb2 = wb2;
-        this.wb3 = wb3;
-        this.wb4 = wb4;
-        this.wb5 = wb5;
-        this.pb = pb;
-        this.multi = multi;
-    }
-
-
-    public long getId() {
-        return id;
+    public String getId() {
+        return ID;
     }
 
     public void setId(int id) {
