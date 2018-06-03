@@ -10,10 +10,8 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.androiddeft.splashscreenwithnetworkactivity.LuckyNumbersRepo;
 import com.androiddeft.splashscreenwithnetworkactivity.PowerBallNumbersRepo;
 import com.androiddeft.splashscreenwithnetworkactivity.R;
-import com.androiddeft.splashscreenwithnetworkactivity.DatabaseHandler;
 
 import java.util.ArrayList;
 

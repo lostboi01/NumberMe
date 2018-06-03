@@ -17,7 +17,6 @@ import android.util.Log;
 import java.io.File;
 import java.util.ArrayList;
 
-import com.androiddeft.splashscreenwithnetworkactivity.DatabaseHandler;
 import com.androiddeft.splashscreenwithnetworkactivity.drawNumbers.drawNumbersActivity;
 
 import static android.os.Environment.DIRECTORY_DOWNLOADS;
@@ -35,7 +34,6 @@ public class SplashActivity extends Activity {
 
     ArrayList<Long> list = new ArrayList<>();
 
-    final DatabaseHandler db = new DatabaseHandler(this);
 
     final drawNumbersActivity drawNumbersActivity = new drawNumbersActivity();
 
@@ -50,7 +48,6 @@ public class SplashActivity extends Activity {
 
         drawNumbersActivity.insertData();
 
-        //new FetchStats().execute();
 
         if(dir.exists()){
 
@@ -114,7 +111,6 @@ public class SplashActivity extends Activity {
                     PowerBallNumbersRepo powerBallNumbersRepo = new PowerBallNumbersRepo();
 
                     PowerBallNumbers powerBallNumbers = new PowerBallNumbers();
-                    //powerBallNumbers.setsId("1");
                     powerBallNumbers.setPowerBallId(String.valueOf(k));
                     powerBallNumbers.setDate(str[0]);
                     powerBallNumbers.setWb1(str[1]);
@@ -127,7 +123,6 @@ public class SplashActivity extends Activity {
                     powerBallNumbers.setMulti(str[7]);
                     powerBallNumbersRepo.insert(powerBallNumbers);
 
-                    //db.add(new values(str[0], str[1], str[2], str[3], str[4], str[5], str[6], str[7]));
                 }
 
 

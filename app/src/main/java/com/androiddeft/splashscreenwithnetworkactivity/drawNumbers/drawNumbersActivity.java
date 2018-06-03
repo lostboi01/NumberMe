@@ -7,8 +7,6 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.androiddeft.splashscreenwithnetworkactivity.R;
-import com.androiddeft.splashscreenwithnetworkactivity.tickets;
-import com.androiddeft.splashscreenwithnetworkactivity.TicketsRepo;
 
 import com.androiddeft.splashscreenwithnetworkactivity.LuckyNumbers;
 import com.androiddeft.splashscreenwithnetworkactivity.LuckyNumbersRepo;
@@ -45,8 +43,6 @@ public class drawNumbersActivity extends AppCompatActivity implements View.OnCli
     Button saveBtn;
 
 
-
-
     public static final String TAG = drawNumbersActivity.class.getSimpleName();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,16 +56,9 @@ public class drawNumbersActivity extends AppCompatActivity implements View.OnCli
 
             saveBtn.setOnClickListener(this);
 
-
-
-            insertData();
-
-
+            
 
         }
-
-
-
 
 
     public void perform_action(View v)
@@ -78,7 +67,6 @@ public class drawNumbersActivity extends AppCompatActivity implements View.OnCli
         List whiteBalls = new ArrayList<>();
 
         List powerBall = new ArrayList<>();
-
 
 
         for(int i = 0; i < 5; i++) {
@@ -95,8 +83,6 @@ public class drawNumbersActivity extends AppCompatActivity implements View.OnCli
             Random r = new Random();
 
             int randomNumber = r.nextInt(( powerBallmax - powerBallmin) + powerBallmin);
-
-
 
             powerBall.add(randomNumber);
         }
@@ -128,7 +114,6 @@ public class drawNumbersActivity extends AppCompatActivity implements View.OnCli
         LuckyNumbersRepo luckyNumbersRepo = new LuckyNumbersRepo();
 
         LuckyNumbers luckyNumbers = new LuckyNumbers();
-        //luckyNumbers.setSId("1");
         luckyNumbers.setDrawingId("2");
         luckyNumbers.setDate("06/02/2018");
         luckyNumbers.setDrawdate("06/06/2018");
